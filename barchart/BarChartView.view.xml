@@ -1,0 +1,29 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" controllerName="namespace.controller.BarChartController">
+    <Page title="Sales Volume Analysis">
+        <content>
+            <!-- Define VizFrame for Bar Chart -->
+            <viz:VizFrame id="barChart" uiConfig="{applicationSet:'fiori'}" vizType="bar" width="100%" height="400px">
+                <!-- Data Binding -->
+                <viz:data>
+                    <viz.data:Dataset>
+                        <viz.data:FlattenedDataset data="{/SalesData}">
+                            <!-- Define Dimensions and Measures -->
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition name="Type" value="{type}" />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition name="Sales Volume" value="{volume}" />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz.data>
+                </viz:data>
+                <!-- Define Feeds -->
+                <viz:feeds>
+                    <viz.feeds:FeedItem uid="valueAxis" type="Measure" values="Sales Volume" />
+                    <viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Type" />
+                </viz:feeds>
+            </viz:VizFrame>
+        </content>
+    </Page>
+</mvc:View>
