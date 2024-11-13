@@ -1,0 +1,10 @@
+<EntityType Name="MeterReading">
+    <Key>
+        <PropertyRef Name="MeterID" />
+    </Key>
+    <Property Name="MeterID" Type="Edm.String" Nullable="false" />
+    <Property Name="ReadingDate" Type="Edm.DateTimeOffset" Nullable="false" />
+    <Property Name="ReadingValue" Type="Edm.Decimal" Nullable="false" />
+    <Property Name="UnitOfMeasure" Type="Edm.String" Nullable="true" />
+</EntityType>
+<EntitySet Name="MeterReadings" EntityType="Namespace.MeterReading" />
