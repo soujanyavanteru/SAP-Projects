@@ -1,0 +1,36 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="namespace.controller.ExtensionController">
+    <Page title="Utility Master Data Overview">
+        <content>
+            <!-- Custom data fields or chart for master data -->
+            <Label text="Expected Sales Volume" />
+            <Input id="salesVolume" value="{/SalesVolume}" editable="false" />
+
+            <Label text="Weighted Sales Volume" />
+            <Input id="weightedVolume" value="{/WeightedVolume}" editable="false" />
+
+            <!-- Custom table for master data -->
+            <Table id="utilityDataTable" items="{path: '/UtilityData'}">
+                <columns>
+                    <Column>
+                        <Text text="Meter ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Reading Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Value" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{MeterID}" />
+                            <Text text="{ReadingDate}" />
+                            <Text text="{Value}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
