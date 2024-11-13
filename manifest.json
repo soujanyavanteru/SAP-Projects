@@ -1,0 +1,24 @@
+"sap.ui5": {
+    "extends": {
+        "extensions": {
+            "sap.ui.viewExtensions": {
+                "namespace.view.Main": {
+                    "ExtensionView": {
+                        "className": "sap.ui.core.mvc.View",
+                        "viewName": "namespace.view.ExtensionView",
+                        "type": "XML"
+                    }
+                }
+            }
+        }
+    },
+    "models": {
+        "": {
+            "dataSource": "YOUR_ODATA_SERVICE",
+            "settings": {
+                "defaultBindingMode": "TwoWay",
+                "metadataUrlParams": {}
+            }
+        }
+    }
+}
